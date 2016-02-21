@@ -1,0 +1,286 @@
+arrange(cran2,desc(ip_id))
+arrange(cran2, package, ip_id)
+arrange(cran2, country, desc(r_version),ip_id)
+cran3 <- select(cran, ip_id, package, size)
+cran3
+mutate(cran3, size_mb=size/2^20)
+mutate(cran3, size_gb=size_mb/2^10)
+mutate(cran3,size_mb=size/2^20, size_gb=size_mb/2^10)
+mutate(cran3, correct_size=size-1000)
+mutate(cran3, correct_size=size+1000)
+summarize(cran,avg_bytes=mean(size))
+library(dplyr)
+cran<- tbl_df(mydf)
+rm("mydf")
+cran
+group_by(package)
+group_by(cran,package)
+?group_by
+by_package <- group_by(cran, package)
+by_package
+summarize(by_package, mean(size))
+submit()
+pack_sum
+quantile(pack_sum$count,prob=0.99)
+filter(pack_sum, count>679)
+top_counts <- filter(pack_sum, count>679)
+top_counts
+View(top_counts)
+0
+library(swirl)
+swirl()
+Sys.getlocal("LC_TIME")
+Sys.getlocale("LC_TIME")
+library(lubridate)
+help(package=lubridate)
+today()
+this_day <- today()
+this_day
+year(this_day)
+wday(this_day)
+wday(this_day, label-T)
+wday(this_day, label=T)
+today(label=T)
+wday(this_day, label=TRUE)
+this_moment <- now()
+this_moment
+hour(this_moment)
+my_date <- ymd("1989-05-17")
+my_date
+class(my_date)
+ymd("1989 May 17")
+mdy("March 12, 1975")
+dmy(25081985)
+ymd("192012")
+ymd("1920/1/2")
+dt1
+ymd_hms(dt1)
+hms(dt1)
+hms("03:22:14")
+dt1
+dt2
+ymd(dt2)
+update(this_moment, hours=8, minutes=34, seconds=55)
+this_moment
+this_moment <- update(this_moment,hours=8,minutes=34, seconds=55)
+this_moment
+?now
+nyc <- now("America/New_York")
+nyc
+depart <- nyc+days(2)
+depart
+depart <- update(depart, hours=17, minutes=34)
+depart
+arrive <- depart+hours(15)+minutes(50)
+?with_tz
+arrive <- with_tz(arrive, "Asia/Hong_Kong")
+arrive
+last_time <- mdy("June 17, 2008", tz="Singapore")
+last_time
+?new_interval
+how_long <- new_interval(last_time, arrive)
+how_long <- interval(last_time, arrive)
+?new_interval
+?interval
+as.period(how_long)
+stopwatch()
+dir()
+getwd()
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile="ass.csv")
+rr <- read.csv("ass.csv", header=T)
+?strsplit
+names(rr)
+?strsplit
+strsplit(names(rr),"wgtp")
+res <- strsplit(names(rr),"wgtp")
+res[123]
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv", destfile="ass.csv")
+rr <- read.csv("ass.csv", header=T)
+names(rr)
+head(rr)
+head(rr[,4])
+head(rr[,5])
+mean(strsplit(rr[,5],","))
+head(rr[2:end,4])
+head(rr[,4],2)
+head(rr[,5],2)
+getwd()
+rr <- read.csv("que.csv", header=T)
+head(rr)
+head(rr,2)
+names(rr)
+hist(rr)
+rr <- read.csv("que.csv", header=T)
+?read.csv
+names(rr)
+head(rr,1)
+library(dplyr)
+?filter
+?select
+?plot
+plot(rr$Course, rr$Pass.Fail.Indicator)
+hist(rr$Course, rr$Pass.Fail.Indicator)
+select(Course)
+select(rr, Course)
+select(rr, Course="PSYC8301")
+select(rr, Course=PSYC8301)
+names(RR)
+names(rr0
+)
+names(rr)
+plot(rr$Course,rr$Official.Grade.6520)
+r1 <- select(rr, Course, Official.Grade.6520)
+head(r1)
+hist(r1)
+head(rr$survey)
+r1 <- select(rr, Course, Official.Grade.6520, Pass.Fail.Indicator)
+hist(r1)
+head(r1)
+rm(list=ls())
+Library(dplyr)#
+# read the dataset#
+rr <- read.csv("que.csv", header=T,na.strings = "NA")#
+#
+r1 <- select(rr, Course, Official.Grade.6520, Pass.Fail.Indicator))#
+head(r1)
+library(dplyr)#
+# read the dataset#
+rr <- read.csv("que.csv", header=T,na.strings = "NA")#
+#
+r1 <- select(rr, Course, Official.Grade.6520, Pass.Fail.Indicator))#
+head(r1)
+library(dplyr)#
+# read the dataset#
+rr <- read.csv("que.csv", header=T,na.strings = "NA")#
+#
+r1 <- select(rr, Course, Official.Grade.6520, Pass.Fail.Indicator)#
+head(r1)
+?arrange
+?plot
+r1[r1$Course=="COUN7004"]
+r1[r1$Course="COUN7004"]
+r1$Course="COUN7004"
+library(dplyr)#
+> # read the dataset#
+> rr <- read.csv("que.csv", header=T,na.strings = "NA")#
+> #
+> r1 <- select(rr, Course, Official.Grade.6520, Pass.Fail.Indicator)#
+> head(r1)
+library(dplyr)#
+# read the dataset#
+rr <- read.csv("que.csv", header=T,na.strings = "NA")#
+#
+r1 <- select(rr, Course, Official.Grade.6520, Pass.Fail.Indicator)#
+head(r1)
+plot(r1$Official.Grade.6520)
+plot(r1$Couse="COUN7004",r1$Official.Grade.6520)
+plot(r1$Couse=="COUN7004",r1$Official.Grade.6520)
+plot(r1[r1$Couse=="COUN7004"],r1$Official.Grade.6520)
+plot(r1$Course[r1$Couse=="COUN7004"],r1$Official.Grade.6520)
+plot(r1$Course[r1$Couse=="COUN7004"],r1$Official.Grade.6520[r1$Couse=="COUN7004"])
+hist(r1$Official.Grade.6520[r1$Couse=="COUN7004"])
+hist(r1$Official.Grade.6520[r1$Couse=="COUN7004",])
+names(rr)
+library(dplyr)#
+# read the dataset#
+rr <- read.csv("que.csv", header=T,na.strings = "NA")#
+#
+r1 <- select(rr, Course,International.Indicator.Desc, Official.Grade.6520, Pass.Fail.Indicator)#
+head(r1)
+r2 <- r1[r1$Course=="COUN7004",]
+head(r2)
+r2
+plot(r2$Official.Grade.6520)
+hist(r2$Official.Grade.6520)
+plot(r2$International.Indicator.Desc,r2$Official.Grade.6520)
+plot(r2$Pass.Fail.Indicator,r2$Official.Grade.6520)
+plot(r2$Pass.Fail.Indicator)
+plot(r2$Pass.Fail.Indicator,xlab="Pass.Fail.Indicator",ylab="No. of sudents",main="The no. of passed and failed students in this Course")
+plot(r2$Pass.Fail.Indicator[r2$International.Indicator.Desc=="Domestic"])
+plot(r2$Pass.Fail.Indicator[r2$International.Indicator.Desc=="International"])
+plot(r2$Pass.Fail.Indicator[r2$International.Indicator.Desc=="International"],xlab="Pass.Fail.Indicator",ylab="No. of sudents",main="The no. of passed and failed international students")
+plot(r2$Pass.Fail.Indicator[r2$International.Indicator.Desc=="Domestic"],xlab="Pass.Fail.Indicator",ylab="No. of sudents",main="The no. of passed and failed international students")
+library(swirl)
+swirl()
+?Devices
+plot
+with(faithful, plot(eruptions,waiting))
+with(faithful, plot(eruptions,waiting,main=" Old Faithful Geyser data"))
+title(main="Old Faithful Geyser data")
+?title
+dev.cur()
+pdf(file="myplot.pdf")
+with(faithful, plot(eruptions,waiting))
+title(main="Old Faithful Geyser data")
+dev.cur()
+dev.off()
+dev.cur()
+with(faithful, plot(eruptions,waiting))
+title(main="Old Faithful Geyser data")
+dev.copy(png,file="geyserplot.png")
+dev.off()
+library(swirl)
+swirl()
+head(cars)
+with(cars, plot(speed,dist))
+text(mean(cars$speed), max(cars$dist), "SWIRL rules")
+text(mean(cars$speed), max(cars$dist), "SWIRL rules!")
+head(state)
+table(state$region)
+?table
+xyplot(Exp~Income|region, state, c(4,1))
+xyplot(Life.Exp~Income|region, state, c(4,1))
+xyplot(Life.Exp~Income|region, data=state, layout=c(4,1))
+xyplot(Life.Exp~Income|region, data=state, layout=c(2,2))
+head(mpg)
+dim(mpg)
+table(mpg$model)
+qplot(displ, hwy, mpg)
+qplot(displ, hwy, data=mpg)
+?qplot
+qplot(displ, hwy, data=mpg)
+?qplot
+dev.off()
+qplot(displ, hwy, data=mpg)
+library(ggplot2)
+qplot(displ, hwy, data=mpg)
+qplot(displ, hwy, mpg)
+qplot(displ, hwy, data=mpg)
+0
+library(swirl)
+swirl()
+qplot(displ, hwy, data = mpg)
+?qplot
+??qplot
+library(nlme)#
+library(lattice)#
+xyplot(weight ~ Time | Diet, BodyWeight)
+?lpoints
+?lines
+>text
+?text
+?lpoints
+library(lattice)#
+library(datasets)#
+data(airquality)#
+p <- xyplot(Ozone ~ Wind | factor(Month), data = airquality)
+p
+?trellis.par.set
+library(datasets)#
+data(airquality)
+?matrix
+?inverse
+??inverse
+source("cachematrix.R")
+test <- makeCacheMatrix(matrix(1:4,2,2))
+test
+test$get()
+cacheSolve(test)
+test$getInverse()
+test$getinverse()
+cacheSolve(test)
+?solve
+source("cachematrix.R")
+cacheSolve(test)
+test <- makeCacheMatrix(matrix(c(3,2,8,1),2,2))
+cacheSolve(test)
