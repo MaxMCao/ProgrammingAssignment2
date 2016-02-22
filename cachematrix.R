@@ -7,6 +7,7 @@ makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
     set <- function(y){
             x <<- y
+            # "<<-" assigns the value to an object in a different environment
             inv <<- NULL
     }
     get <- function() x
