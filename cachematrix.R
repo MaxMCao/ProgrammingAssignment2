@@ -1,5 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This is the second submission of this project. 
+## The fisrt submission did not include the SHA-1 hash for the comments.
+
+##  These functions cache the inverse of a matrix
 
 ## Write a short comment describing this function
 
