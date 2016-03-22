@@ -3,7 +3,7 @@
 
 ##  These functions cache the inverse of a matrix
 
-## Write a short comment describing this function
+## This function creates the matrix that can catche the inverse
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
@@ -22,7 +22,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function computes the inverse of the created matrix
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
